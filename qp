@@ -1,0 +1,257 @@
+= ..ppuusshh
+
+(from gem activerecord-7.0.3)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  CCoolllleeccttiioonnPPrrooxxyy
+------------------------------------------------------------------------
+  push(*records)
+
+------------------------------------------------------------------------
+
+(This method is an alias for
+ActiveRecord::Associations::CollectionProxy#<<.)
+
+Adds one or more records to the collection by setting their foreign keys
+to the association's primary key. Since << flattens its argument list
+and inserts each record, push and concat behave identically. Returns
+self so several appends may be chained together.
+
+  class Person < ActiveRecord::Base
+    has_many :pets
+  end
+
+  person.pets.size # => 0
+  person.pets << Pet.new(name: 'Fancy-Fancy')
+  person.pets << [Pet.new(name: 'Spook'), Pet.new(name: 'Choo-Choo')]
+  person.pets.size # => 3
+
+  person.id # => 1
+  person.pets
+  # => [
+  #      #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #      #<Pet id: 2, name: "Spook", person_id: 1>,
+  #      #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #    ]
+
+
+(from ruby core)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  AArrrraayy
+------------------------------------------------------------------------
+  array.push(*objects) -> self
+
+------------------------------------------------------------------------
+
+Appends trailing elements.
+
+Appends each argument in objects to self;  returns self:
+  a = [:foo, 'bar', 2]
+  a.push(:baz, :bat) # => [:foo, "bar", 2, :baz, :bat]
+
+Appends each argument as one element, even if it is another Array:
+  a = [:foo, 'bar', 2]
+  a1 = a.push([:baz, :bat], [:bam, :bad])
+  a1 # => [:foo, "bar", 2, [:baz, :bat], [:bam, :bad]]
+
+Array#append is an alias for Array#push.
+
+Related: #pop, #shift, #unshift.
+
+
+(from gem byebug-11.1.3)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  HHiissttoorryy
+------------------------------------------------------------------------
+  push(cmd)
+
+------------------------------------------------------------------------
+
+Adds a new command to Readline's history.
+
+
+(from ruby core)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  RRooww
+------------------------------------------------------------------------
+  row.push(*values) ->self
+
+------------------------------------------------------------------------
+
+Appends each of the given values to self as a field; returns self:
+  source = "Name,Name,Name\nFoo,Bar,Baz\n"
+  table = CSV.parse(source, headers: true)
+  row = table[0]
+  row.push('Bat', 'Bam')
+  row # => #<CSV::Row "Name":"Foo" "Name":"Bar" "Name":"Baz" nil:"Bat" nil:"Bam">
+
+
+(from ruby core)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  TTaabbllee
+------------------------------------------------------------------------
+  table.push(*rows_or_arrays) -> self
+
+------------------------------------------------------------------------
+
+A shortcut for appending multiple rows. Equivalent to:
+  rows.each {|row| self << row }
+
+Each argument may be either a CSV::Row object or an Array:
+  source = "Name,Value\nfoo,0\nbar,1\nbaz,2\n"
+  table = CSV.parse(source, headers: true)
+  rows = [
+    CSV::Row.new(table.headers, ['bat', 3]),
+    ['bam', 4]
+  ]
+  table.push(*rows)
+  table[3..4] # => [#<CSV::Row "Name":"bat" "Value":3>, #<CSV::Row "Name":"bam" "Value":4>]
+
+
+(from gem concurrent-ruby-1.2.3)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  JJaavvaaNNoonnCCoonnccuurrrreennttPPrriioorriittyyQQuueeuuee
+------------------------------------------------------------------------
+  push(item)
+
+------------------------------------------------------------------------
+
+@!macro priority_queue_method_push
+
+
+(from gem concurrent-ruby-1.2.3)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  RRuubbyyNNoonnCCoonnccuurrrreennttPPrriioorriittyyQQuueeuuee
+------------------------------------------------------------------------
+  push(item)
+
+------------------------------------------------------------------------
+
+@!macro priority_queue_method_push
+
+
+(from gem concurrent-ruby-1.2.3)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  LLoocckkFFrreeeeSSttaacckk
+------------------------------------------------------------------------
+  push(value)
+
+------------------------------------------------------------------------
+
+@param [Object] value @return [self]
+
+
+(from gem nokogiri-1.16.0-x86_64-linux)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  NNooddeeSSeett
+------------------------------------------------------------------------
+  push(node)
+
+------------------------------------------------------------------------
+
+Append node to the NodeSet.
+
+
+(from gem pry-0.14.2)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  CCooddee
+------------------------------------------------------------------------
+  push(line)
+
+------------------------------------------------------------------------
+
+Append the given line. lineno is one more than the last existing line,
+unless specified otherwise.
+
+@param [String] line @return [void]
+
+
+(from gem pry-0.14.2)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  HHiissttoorryy
+------------------------------------------------------------------------
+  push(line)
+
+------------------------------------------------------------------------
+
+Add a line to the input history, ignoring blank and duplicate lines.
+@param [String] line @return [String] The same line that was passed in
+
+
+(from gem pry-0.14.2)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  PPrryyTTeesstteerr
+------------------------------------------------------------------------
+  push(*lines)
+
+------------------------------------------------------------------------
+
+
+(from ruby core)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  TTrreeeeBBuuiillddeerr
+------------------------------------------------------------------------
+  push(value)
+
+------------------------------------------------------------------------
+
+
+(from ruby core)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  YYAAMMLLTTrreeee
+------------------------------------------------------------------------
+  push(object)
+
+------------------------------------------------------------------------
+
+
+(from ruby core)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  HHiissttoorryy
+------------------------------------------------------------------------
+  push(*val)
+
+------------------------------------------------------------------------
+
+==== ((UUsseess  ssuuppeerrccllaassss  mmeetthhoodd  RRDDoocc::::AAnnyyMMeetthhoodd::  AArrrraayy##ppuusshh))
+------------------------------------------------------------------------
+
+
+(from ruby core)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  TTuupplleeBBaagg
+------------------------------------------------------------------------
+  push(tuple)
+
+------------------------------------------------------------------------
+
+Add tuple to the TupleBag.
+
+
+(from gem thor-1.3.0)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  NNeesstteeddCCoonntteexxtt
+------------------------------------------------------------------------
+  push()
+
+------------------------------------------------------------------------
+
+
+(from ruby core)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  QQuueeuuee
+------------------------------------------------------------------------
+  push(object)
+  enq(object)
+  <<(object)
+
+------------------------------------------------------------------------
+
+Pushes the given object to the queue.
+
+
+(from ruby core)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  SSiizzeeddQQuueeuuee
+------------------------------------------------------------------------
+  push(object, non_block=false)
+  enq(object, non_block=false)
+  <<(object)
+
+------------------------------------------------------------------------
+
+Pushes object to the queue.
+
+If there is no space left in the queue, waits until space becomes
+available, unless non_block is true.  If non_block is true, the thread
+isn't suspended, and ThreadError is raised.
+
+
+(from gem websocket-extensions-0.1.5)
+=== IImmpplleemmeennttaattiioonn  ffrroomm  OOffffeerrss
+------------------------------------------------------------------------
+  push(name, params)
+
+------------------------------------------------------------------------
+
+
